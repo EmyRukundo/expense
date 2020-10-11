@@ -2,6 +2,7 @@ package com.example.theprogrammer.expense.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 import javax.persistence.*;
 
@@ -14,11 +15,9 @@ public class Category {
     @Id
     private Long id;
 
+
+    @NonNull
+    // Travel, Grocery,...
     private String name;
 
-    private String email;
-
-
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private User user;
 }
