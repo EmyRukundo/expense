@@ -14,11 +14,7 @@ public class Category {
     @Id
     private Long id;
 
+    // Travel, Grocery,...
     private String name;
 
-    private String email;
-
-
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private User user;
 }
