@@ -40,4 +40,16 @@ public class CategoryController {
         Category result = categoryRepository.save(category);
         return ResponseEntity.created(new URI("/api/category" + result.getId())).body(result);
     }
+
+    @PutMapping("/category/{id}")
+    ResponseEntity<Category> updateCategory(@valid @RequestBody Category category){
+        Category result = categoryRepository.save(category);
+        return ResponseEntity.ok().body(result);
+    }
+
+    @DeleteMapping("/category/{id}")
+    ResponseEntity<?> deleteCategory(@PathVariable long id){
+        categoryRepository.deleteById(id);
+        return ResponseEntity.ok.build();
+    }
 }
